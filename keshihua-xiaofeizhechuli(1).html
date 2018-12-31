@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <!-- 引入 echarts.js -->
+    <script src="echarts.js"></script>
+</head>
+
+<body>
+    <center>
+        <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+        <div id="main" style="width: 960px;height:450px;"></div>
+        <script type="text/javascript">
+            // 基于准备好的dom，初始化echarts实例
+            var myChart = echarts.init(document.getElementById('main'));
+
+            // 指定图表的配置项和数据
+            var option = {
+                title: {
+                    text: '大学生处理不同包装废弃物的方式',
+                    subtext: '单位：百分比（%）   来源：调查问卷'
+                },
+                tooltip: {
+                    trigger: 'axis'
+                },
+                legend: {
+                    data: ['丢进垃圾箱', '储存起来卖废品', '拿来装其他东西']
+                },
+                toolbox: {
+                    show: true,
+                    feature: {
+                        dataView: {
+                            show: true,
+                            readOnly: false
+                        },
+                        magicType: {
+                            show: true,
+                            type: ['line', 'bar']
+                        },
+                        restore: {
+                            show: true
+                        },
+                        saveAsImage: {
+                            show: true
+                        }
+                    }
+                },
+                calculable: true,
+                xAxis: [{
+                    type: 'category',
+                    data: ['快递运单', '快递胶带', '快递气泡袋', '快递密封袋', '快递编织袋', '快递纸箱', '快递木箱', '发泡塑料', '气泡膜', '气柱袋', '胶带或标示贴']
+                }],
+                yAxis: [{
+                    type: 'value'
+                }],
+                series: [{
+                    name: '丢进垃圾箱',
+                    type: 'bar',
+                    data: [92, 91, 93, 95, 88, 93, 100, 97, 97, 94, 92, ],
+                    markPoint: {
+                        data: [{
+                            type: 'max',
+                            name: '最大值1'
+                        }, {
+                            type: 'min',
+                            name: '最小值1'
+                        }]
+                    },
+                    markLine: {
+                        data: [{
+                            type: 'average',
+                            name: '平均值1'
+                        }]
+                    }
+                }, {
+                    name: '储存起来卖废品',
+                    type: 'bar',
+                    data: [47, 43, 44, 45, 56, 44, 44, 51, 50, 61, 58],
+                    markPoint: {
+                        data: [{
+                            type: 'max',
+                            name: '最大值2'
+                        }, {
+                            type: 'min',
+                            name: '最小值2'
+                        }]
+                    },
+                    markLine: {
+                        data: [{
+                            type: 'average',
+                            name: '平均值2'
+                        }]
+                    }
+                }, {
+                    name: '拿来装其他东西',
+                    type: 'bar',
+                    data: [7, 6, 7, 7, 4, 5, 11, 8, 8, 12, 11],
+                    markPoint: {
+                        data: [{
+                            type: 'max',
+                            name: '最大值3'
+                        }, {
+                            type: 'min',
+                            name: '最小值3'
+                        }]
+                    },
+                    markLine: {
+                        data: [{
+                            type: 'average',
+                            name: '平均值3'
+                        }]
+                    }
+                }]
+            };
+
+            // 使用刚指定的配置项和数据显示图表。
+            myChart.setOption(option);
+        </script>
+    </center>
+</body>
+
+</html>
