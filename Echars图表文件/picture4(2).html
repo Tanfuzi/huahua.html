@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <script type="text/javascript" src="echarts.min.js"></script>
+</head>
+
+<body>
+    <div id="picture3" style="width: 600px;height:400px;">
+        <script type="text/javascript">
+            var myChart = echarts.init(document.getElementById('picture3'));
+
+
+            option = {
+                title: {
+                    text: '2016城市生活垃圾产生量前八城市',
+                    subtext: '单位：万吨',
+                    x: 'center'
+                },
+                tooltip: {
+                    trigger: 'item',
+                    formatter: "{a} <br/>{b}: {c} ({d}%)"
+                },
+                legend: {
+                    orient: 'vertical',
+                    x: 'left',
+                    data: ['重庆市', '一线城市', '新一线城市', '北京市', '上海市', '广州市', '深圳市', '成都市', '杭州市']
+                },
+                series: [{
+                    name: '城市名称',
+                    type: 'pie',
+                    selectedMode: 'single',
+                    radius: [0, '30%'],
+
+                    label: {
+                        normal: {
+                            position: 'inner'
+                        }
+                    },
+                    labelLine: {
+                        normal: {
+                            show: false
+                        }
+                    },
+                    data: [{
+                        value: 626,
+                        name: '二线城市',
+                        selected: true
+                    }, {
+                        value: 2610.8,
+                        name: '一线城市'
+                    }, {
+                        value: 833,
+                        name: '新一线城市'
+                    }]
+                }, {
+                    name: '城市名称',
+                    type: 'pie',
+                    radius: ['40%', '55%'],
+                    label: {
+                        normal: {
+                            formatter: '{a|{a}}{abg|}\n{hr|}\n  {b|{b}：}{c}  {per|{d}%}  ',
+                            backgroundColor: '#eee',
+                            borderColor: '#aaa',
+                            borderWidth: 1,
+                            borderRadius: 4,
+                            // shadowBlur:3,
+                            // shadowOffsetX: 2,
+                            // shadowOffsetY: 2,
+                            // shadowColor: '#999',
+                            // padding: [0, 7],
+                            rich: {
+                                a: {
+                                    color: '#999',
+                                    lineHeight: 22,
+                                    align: 'center'
+                                },
+                                // abg: {
+                                //     backgroundColor: '#333',
+                                //     width: '100%',
+                                //     align: 'right',
+                                //     height: 22,
+                                //     borderRadius: [4, 4, 0, 0]
+                                // },
+                                hr: {
+                                    borderColor: '#aaa',
+                                    width: '100%',
+                                    borderWidth: 0.5,
+                                    height: 0
+                                },
+                                b: {
+                                    fontSize: 16,
+                                    lineHeight: 33
+                                },
+                                per: {
+                                    color: '#eee',
+                                    backgroundColor: '#334455',
+                                    padding: [2, 4],
+                                    borderRadius: 2
+                                }
+                            }
+                        }
+                    },
+                    data: [{
+                        value: 626,
+                        name: '重庆市'
+                    }, {
+                        value: 790.3,
+                        name: '北京市'
+                    }, {
+                        value: 789.9,
+                        name: '上海市'
+                    }, {
+                        value: 455.8,
+                        name: '广州市'
+                    }, {
+                        value: 574.8,
+                        name: '深圳市'
+                    }, {
+                        value: 467.5,
+                        name: '成都市'
+                    }, {
+                        value: 365.5,
+                        name: '杭州市'
+                    }]
+                }]
+            };
+
+
+            myChart.setOption(option);
+        </script>
+    </div>
+</body>
+
+</html>

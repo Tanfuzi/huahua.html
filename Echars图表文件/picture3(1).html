@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <script type="text/javascript" src="echarts.js"></script>
+</head>
+
+<body>
+    <div id="picture3" style="width: 600px;height:400px;">
+        <script type="text/javascript">
+            var myChart = echarts.init(document.getElementById('picture3'));
+
+
+
+            option = {
+                title: {
+                    left: 'center',
+
+                    text: '2010-2016年中国生活垃圾清运量',
+                    subtext: '数据来源：国家统计局'
+                },
+                legend: {
+                    data: ['生活垃圾清运量（单位：万吨）'],
+                    top: 'bottom'
+                },
+
+                color: ['#3398DB'],
+
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: { // 坐标轴指示器，坐标轴触发有效
+                        type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+                    }
+                },
+                grid: {
+                    left: '3%',
+                    right: '4%',
+                    bottom: '6%',
+                    containLabel: true
+                },
+                xAxis: [{
+                    type: 'category',
+
+                    data: ['2010', '2011', '2012', '2013', '2014', '2015', '2016'],
+                    axisTick: {
+                        alignWithLabel: true
+                    }
+                }],
+                yAxis: [{
+                    type: 'value'
+                }],
+                series: [{
+                    name: '生活垃圾清运量（单位：万吨）',
+                    type: 'bar',
+                    barWidth: '60%',
+                    data: [15804.8, 16395.3, 17080.9, 17238.6, 17860.2, 19141.9, 20362]
+                }]
+            };
+
+
+
+            myChart.setOption(option);
+        </script>
+    </div>
+</body>
+
+</html>

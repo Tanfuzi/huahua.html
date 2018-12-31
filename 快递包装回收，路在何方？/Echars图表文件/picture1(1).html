@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <script type="text/javascript" src="echarts.js"></script>
+
+</head>
+
+<body>
+    <div id='picture1' style="width: 600px;height:400px;">
+        <script type="text/javascript">
+            var myChart = echarts.init(document.getElementById('picture1'));
+
+            option = {
+                title: {
+                    left: 'center',
+
+                    text: '2013-2017年中国快递业务量',
+                    subtext: '数据来源：国家统计局'
+                },
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: {
+                        type: 'cross',
+                        crossStyle: {
+                            color: '#999'
+                        }
+                    }
+                },
+                toolbox: {
+                    feature: {
+                        dataView: {
+                            show: true,
+                            readOnly: false
+                        },
+                        magicType: {
+                            show: true,
+                            type: ['line', 'bar']
+                        },
+                        restore: {
+                            show: true
+                        },
+                        saveAsImage: {
+                            show: true
+                        }
+                    }
+                },
+                legend: {
+                    data: ['快递业务量', '增速'],
+                    top: 'bottom',
+                },
+                xAxis: [{
+                    type: 'category',
+                    data: ['2013', '2014', '2015', '2016', '2017'],
+                    axisPointer: {
+                        type: 'shadow'
+                    }
+                }],
+                yAxis: [{
+                    type: 'value',
+                    name: '快递业务量',
+                    min: 0,
+                    max: 450,
+                    interval: 50,
+                    axisLabel: {
+                        formatter: '{value} 亿件'
+                    }
+                }, {
+                    type: 'value',
+                    name: '增速',
+                    min: 0,
+                    max: 100,
+                    interval: 20,
+                    axisLabel: {
+                        formatter: '{value} %'
+                    }
+                }],
+                series: [{
+                        name: '快递业务量',
+                        type: 'bar',
+                        data: [91.9, 139.6, 206.7, 312.8, 400.6]
+                    },
+
+                    {
+                        name: '增速',
+                        type: 'line',
+                        yAxisIndex: 1,
+                        data: [61.6, 51.9, 48.0, 51.4, 28.0]
+                    }
+                ]
+            };
+
+
+
+            myChart.setOption(option);
+        </script>
+
+    </div>
+
+
+</body>
+
+</html>

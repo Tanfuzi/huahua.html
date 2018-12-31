@@ -1,0 +1,416 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <script type="text/javascript" src="echarts.js"></script>
+    <script type="text/javascript" src="http://gallery.echartsjs.com/dep/echarts/map/js/china.js"></script>
+</head>
+
+<body>
+    <div id="picture8" style="width: 1000px;height:800px;">
+        <script type="text/javascript">
+            var myChart = echarts.init(document.getElementById('picture8'));
+
+            option = {
+
+                title: {
+                    text: "快递包装回收体系模型",
+                    subtext: "其中数值表示分配份额（单位：%）",
+                    top: "top",
+                    left: "center"
+                },
+                tooltip: {},
+                legend: [{
+                    formatter: function(name) {
+                        return echarts.format.truncateText(name, 40, '14px Microsoft Yahei', '…');
+                    },
+                    tooltip: {
+                        show: true
+                    },
+                    selectedMode: 'true',
+                    bottom: 20,
+                    data: ['快递包装回收', '科技', '法律', '企业', '政府', '消费者']
+                }],
+                toolbox: {
+                    show: true,
+                    feature: {
+                        dataView: {
+                            show: true,
+                            readOnly: true
+                        },
+                        restore: {
+                            show: true
+                        },
+                        saveAsImage: {
+                            show: true
+                        }
+                    }
+                },
+                animationDuration: 1000,
+                animationEasingUpdate: 'quinticInOut',
+                series: [{
+                    name: '快递包装回收',
+                    type: 'graph',
+                    layout: 'force',
+
+                    force: {
+                        repulsion: 500,
+                        edgeLength: 120
+                    },
+                    data: [{
+                        "id": 0,
+                        "name": "快递包装回收",
+                        // "x": 0,
+                        // y: 0,
+                        "symbolSize": [100, 100],
+                        "draggable": "false",
+                        "category": "父节点",
+                        "value": 100,
+
+                    }, {
+                        "id": 1,
+                        "name": "科技",
+                        "symbolSize": 45,
+                        "category": "项目类型",
+                        "draggable": "true",
+                        "value": 35
+                    }, {
+                        "id": 2,
+                        "name": "政府",
+                        "symbolSize": 32,
+                        "category": "项目类型",
+                        "draggable": "true",
+                        "value": 35
+                    }, {
+                        "id": 3,
+                        "name": "法律",
+                        "symbolSize": 40,
+                        "category": "项目类型",
+                        "draggable": "true",
+                        "value": 10
+                    }, {
+                        "id": 4,
+                        "name": "消费者",
+                        "symbolSize": 40,
+                        "category": "项目类型",
+                        "draggable": "true",
+                        "value": 10
+                    }, {
+                        "id": 5,
+                        "name": "企业",
+                        "symbolSize": 40,
+                        "category": "项目类型",
+                        "draggable": "true",
+                        "value": 10
+                    }, {
+                        "id": 6,
+                        "name": "快递企业",
+                        "symbolSize": 53,
+                        "category": "评标办法",
+                        "draggable": "true",
+                        "value": 35
+                    }, {
+                        "id": 8,
+                        "name": "电商平台",
+                        "symbolSize": 45,
+                        "category": "评标办法",
+                        "draggable": "true",
+                        "value": 10
+                    }, {
+                        "id": 9,
+                        "name": "资金支持",
+                        "symbolSize": 45,
+                        "category": "评标办法",
+                        "draggable": "true",
+                        "value": 12
+                    }, {
+                        "id": 10,
+                        "name": "扶持政策",
+                        "symbolSize": 45,
+                        "category": "评标办法",
+                        "draggable": "true",
+                        "value": 12
+                    }, {
+                        "id": 11,
+                        "name": "宣传",
+                        "symbolSize": 45,
+                        "category": "评标办法",
+                        "draggable": "true",
+                        "value": 11
+                    }, {
+                        "id": 12,
+                        "name": "《快递封装用品》",
+                        "symbolSize": 45,
+                        "category": "评标办法",
+                        "draggable": "true",
+                        "value": 10
+                    }, {
+                        "id": 13,
+                        "name": "了解环保知识",
+                        "symbolSize": 26,
+                        "category": "定标办法",
+                        "draggable": "true",
+                        "value": 5
+                    }, {
+                        "id": 14,
+                        "name": "包装",
+                        "symbolSize": 45,
+                        "category": "定标办法",
+                        "draggable": "true",
+                        "value": 35
+                    }, {
+                        "id": 15,
+                        "name": "共享快递盒",
+                        "symbolSize": 45,
+                        "category": "定标办法",
+                        "draggable": "true",
+                        "value": 5
+                    }, {
+                        "id": 16,
+                        "name": "重金属限量",
+                        "symbolSize": 45,
+                        "category": "定标办法",
+                        "draggable": "true",
+                        "value": 3
+
+                    }, {
+                        "id": 17,
+                        "name": "生物降解材料",
+                        "symbolSize": 45,
+                        "category": "定标办法",
+                        "draggable": "true",
+                        "value": 3
+                    }, {
+                        "id": 18,
+                        "name": "绿色包裹活动",
+                        "symbolSize": 45,
+                        "category": "定标办法",
+                        "draggable": "true",
+                        "value": 5
+                    }, {
+                        "id": 19,
+                        "name": "绿色包装技术革新",
+                        "symbolSize": 26,
+                        "category": "定标办法",
+                        "draggable": "true",
+                        "value": 6
+
+                    }, {
+                        "id": 20,
+                        "name": "资助回收机构",
+                        "symbolSize": 45,
+                        "category": "定标办法",
+                        "draggable": "true",
+                        "value": 6
+                    }, {
+                        "id": 21,
+                        "name": "税收优惠",
+                        "symbolSize": 45,
+                        "category": "定标办法",
+                        "draggable": "true",
+                        "value": 6
+                    }, {
+                        "id": 22,
+                        "name": "回收网点整体规划",
+                        "symbolSize": 45,
+                        "category": "定标办法",
+                        "draggable": "true",
+                        "value": 6
+                    }, {
+                        "id": 23,
+                        "name": "加大回收宣传力度",
+                        "symbolSize": 45,
+                        "category": "定标办法",
+                        "draggable": "true",
+                        "value": 11
+                    }, {
+                        "id": 24,
+                        "name": "技术性印刷油墨",
+                        "symbolSize": 45,
+                        "category": "定标办法",
+                        "draggable": "true",
+                        "value": 4
+                    }, {
+                        "id": 25,
+                        "name": "无害包装",
+                        "symbolSize": 28,
+                        "category": "中标企业",
+                        "draggable": "true",
+                        "value": 7
+                    }, {
+                        "id": 26,
+                        "name": "胶带瘦身",
+                        "symbolSize": 30,
+                        "category": "中标企业",
+                        "draggable": "true",
+                        "value": 7
+                    }, {
+                        "id": 27,
+                        "name": "包装实验室",
+                        "symbolSize": 40,
+                        "category": "中标企业",
+                        "draggable": "true",
+                        "value": 7
+                    }, {
+                        "id": 28,
+                        "name": "芯片环保袋",
+                        "symbolSize": 25,
+                        "category": "中标企业",
+                        "draggable": "true",
+                        "value": 7
+
+                    }, {
+                        "id": 29,
+                        "name": "全生物降解材料",
+                        "symbolSize": 45,
+                        "category": "中标企业",
+                        "draggable": "true",
+                        "value": 7
+                    }],
+                    links: [{
+                        "source": "0",
+                        "target": "1"
+                    }, {
+                        "source": "0",
+                        "target": "2"
+                    }, {
+                        "source": "0",
+                        "target": "3"
+                    }, {
+                        "source": "0",
+                        "target": "4"
+                    }, {
+                        "source": "0",
+                        "target": "5"
+                    }, {
+                        "source": "1",
+                        "target": "6"
+                    }, {
+                        "source": "5",
+                        "target": "8"
+                    }, {
+                        "source": "2",
+                        "target": "9"
+                    }, {
+                        "source": "2",
+                        "target": "10"
+                    }, {
+                        "source": "2",
+                        "target": "11"
+                    }, {
+                        "source": "12",
+                        "target": "17"
+                    }, {
+                        "source": "3",
+                        "target": "12"
+                    }, {
+                        "source": "4",
+                        "target": "13"
+                    }, {
+                        "source": "6",
+                        "target": "14"
+                    }, {
+                        "source": "8",
+                        "target": "15"
+                    }, {
+                        "source": "12",
+                        "target": "16"
+                    }, {
+                        "source": "8",
+                        "target": "18"
+                    }, {
+                        "source": "9",
+                        "target": "19"
+                    }, {
+                        "source": "9",
+                        "target": "20"
+                    }, {
+                        "source": "10",
+                        "target": "21"
+                    }, {
+                        "source": "10",
+                        "target": "22"
+                    }, {
+                        "source": "11",
+                        "target": "23"
+                    }, {
+                        "source": "12",
+                        "target": "24"
+                    }, {
+                        "source": "14",
+                        "target": "25"
+                    }, {
+                        "source": "14",
+                        "target": "26"
+                    }, {
+                        "source": "14",
+                        "target": "27"
+                    }, {
+                        "source": "14",
+                        "target": "28"
+                    }, {
+                        "source": "14",
+                        "target": "29"
+                    }],
+                    categories: [{
+                        'name': '项目类型',
+                        itemStyle: {
+                            normal: {
+                                color: '#57BC90'
+                            }
+                        },
+                    }, {
+                        'name': '评标办法',
+                        itemStyle: {
+                            normal: {
+                                color: '#86bca5'
+                            }
+                        },
+                    }, {
+                        'name': '父节点',
+                        itemStyle: {
+                            normal: {
+                                color: '#015249'
+                            }
+                        },
+                    }, {
+                        'name': '定标办法',
+                        itemStyle: {
+                            normal: {
+                                color: '#a4bdb2'
+                            }
+                        },
+                    }, {
+                        'name': '中标企业',
+                        itemStyle: {
+                            normal: {
+                                color: '#A5A5AF'
+                            }
+                        },
+                    }],
+                    focusNodeAdjacency: true,
+                    roam: true,
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'top',
+                        }
+                    },
+                    lineStyle: {
+                        normal: {
+                            color: 'source',
+                            curveness: 0,
+                            type: "solid"
+                        }
+                    }
+                }]
+            };
+
+            myChart.setOption(option);
+        </script>
+    </div>
+</body>
+
+</html>

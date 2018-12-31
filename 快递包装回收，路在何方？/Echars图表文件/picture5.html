@@ -1,0 +1,127 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <script type="text/javascript" src="echarts.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/resource/echarts-liquidfill-latest/dist/echarts-liquidfill.min.js"></script>
+</head>
+
+<body>
+    <div id="picture5" style="width: 1000px;height:800px;">
+        <script type="text/javascript">
+            var myChart = echarts.init(document.getElementById('picture5'));
+
+
+            // ECharts 水球图插件，需要额外插件脚本，参见上方“脚本”
+            // 完整配置参数参见：https://github.com/ecomfe/echarts-liquidfill
+
+            option = {
+
+                title: [{
+                    text: '纸板和塑料未回收率',
+                    left: '26%',
+                    top: '52%',
+                    textAlign: 'center',
+                    textStyle: {
+                        fontWeight: 'normal',
+                        color: '#6692e2',
+                        fontSize: 20,
+                        textAlign: 'center',
+                    }
+                }, {
+                    text: '包装盒未回收率',
+                    left: '70%',
+                    top: '52%',
+                    textAlign: 'center',
+                    textStyle: {
+                        fontWeight: 'normal',
+                        color: '#6692e2',
+                        fontSize: 20,
+                        textAlign: 'center',
+                    }
+                }, {
+                    left: 'center',
+                    top: '5%',
+                    text: '2017年纸板塑料和包装盒未回收率',
+                    subtext: '数据来源：人民日报'
+                }],
+                series: [{
+                    type: 'liquidFill',
+                    // data: [0.6, 0.5, 0.4, 0.3],
+                    data: [0.9, 0.7, 0.6, 0.5],
+                    direction: 'right', //波浪方向或者静止
+                    radius: '30%',
+                    // 水球颜色
+                    color: ['#57BC90'],
+                    center: ['27%', '35%'], //水球位置
+                    // outline  外边
+                    outline: {
+                        // show: false
+                        borderDistance: 5, //内环padding值
+                        itemStyle: {
+                            borderWidth: 8, //圆边线宽度
+                            borderColor: '#57BC90',
+                        },
+                    },
+                    label: {
+                        normal: {
+                            formatter: '90%', //重置百分比字体为空
+                            // textStyle: {
+                            color: 'red',
+                            insideColor: 'yellow',
+                            fontSize: 10
+                                // }
+                        }
+                    },
+                    // 内图 背景色 边
+                    backgroundStyle: {
+                        color: '#77C9D4',
+                        // borderWidth: 5,
+                        // borderColor: 'red',
+                    }
+                }, {
+                    type: 'liquidFill',
+                    data: [0.8, 0.7, 0.6],
+
+                    direction: 'right', //波浪方向或者静止
+                    radius: '30%',
+                    // 水球颜色
+                    color: ['#015249'],
+                    center: ['70%', '35%'], //水球位置
+                    // outline  外边
+                    outline: {
+                        // show: false
+                        borderDistance: 5, //内环padding值
+                        itemStyle: {
+                            borderWidth: 8, //圆边线宽度
+                            borderColor: '#015249',
+                        },
+                    },
+                    label: {
+                        normal: {
+                            formatter: '80%', //重置百分比字体为空
+                            // textStyle: {
+                            color: 'red',
+                            insideColor: 'yellow',
+                            fontSize: 10
+                                // }
+                        }
+                    },
+                    // 内图 背景色 边
+                    backgroundStyle: {
+                        color: '#77C9D4',
+                        // borderWidth: 5,
+                        // borderColor: 'red',
+                    }
+                }]
+            };
+
+
+            myChart.setOption(option);
+        </script>
+    </div>
+</body>
+
+</html>
